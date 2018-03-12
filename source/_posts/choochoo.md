@@ -11,6 +11,7 @@ date: 2017-01-20 14:35:13
 > 我的第一款游戏，使用 CocosCreator 制作。
 > 
 > Appstore : https://itunes.apple.com/app/id1189428283
+
 <!-- more -->
 
 # 动图效果
@@ -48,3 +49,4 @@ TweenLite 是基础动画库，Greensock 还有加强版的动画库： TweenMax
 再配合上 inspector 上的属性编辑，编辑一个关卡就变得非常简单了。
 
 {% asset_img choochoo-editor.gif choochoo %}
+
