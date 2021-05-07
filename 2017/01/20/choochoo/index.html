@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>试水之作：Choochoo | 2youyou2</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="2youyou2" type="application/atom+xml">
+    
+	<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">2youyou2</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>试水之作：Choochoo</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2017-01-20</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/CocosCreator/" rel="tag">CocosCreator</a> <a class="article__tag-none-link" href="/tags/Game/" rel="tag">Game</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<figure class="figure"><img src="/2017/01/20/choochoo/choochoo.jpg" class="" title="choochoo"></figure>
+<!-- ![choochoo](choochoo.jpg) -->
+
+<blockquote>
+<p>我的第一款游戏，使用 CocosCreator 制作。<br>Appstore : <a target="_blank" rel="noopener" href="https://itunes.apple.com/app/id1189428283">https://itunes.apple.com/app/id1189428283</a></p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="动图效果"><a href="#动图效果" class="headerlink" title="动图效果"></a>动图效果</h1><p>简易教学关卡动效</p>
+<!--  -->
+<p><figure class="figure"><img src="gif/1.gif" alt="1.gif"><figcaption class="figure__caption">1.gif</figcaption></figure></p>
+<p>游戏关卡动效</p>
+<!--  -->
+<p><figure class="figure"><img src="gif/2.gif" alt="2.gif"><figcaption class="figure__caption">2.gif</figcaption></figure></p>
+<p>结束感谢关卡动效</p>
+<!--  -->
+<p><figure class="figure"><img src="gif/3.gif" alt="3.gif"><figcaption class="figure__caption">3.gif</figcaption></figure></p>
+<h1 id="使用到的技术"><a href="#使用到的技术" class="headerlink" title="使用到的技术"></a>使用到的技术</h1><h2 id="TweenLite"><a href="#TweenLite" class="headerlink" title="TweenLite"></a>TweenLite</h2><p>在这个游戏中用到了比较多的动画，而这些动画都是由代码动态生成的，包括开场和结尾的文字特效。由程序控制的动画可以做出非常细腻的效果，并且可以根据环境动态调整。   </p>
+<p>cocos 本身的动画库就是 action 那一套，这套系统本身是从 cocos2d-x 里迁移过来的，并没有很好的利用 js 语法的优势。比如说想同时修改节点颜色和位置，得记住每一个属性对用的 action 的名字，还得用类似 cc.sequence 的 action 串联起来，实在是很累。  </p>
+<p>在这里我选用的是 <a target="_blank" rel="noopener" href="https://greensock.com/docs/#/HTML5/GSAP/TweenLite/">TweenLite</a> 动画库，它可以很好地运行在 web 和 native 端上。<br>使用方法很简单，只需要记住 <code>TweenLite.to</code> 这个方法就差不多了。</p>
+<p>例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TweenLite.to(node, <span class="number">2</span>, &#123;<span class="attr">x</span>:<span class="number">200</span>, <span class="attr">y</span>:<span class="number">200</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<p>TweenLite 是基础动画库，Greensock 还有加强版的动画库： TweenMax, TimelineLite, TimelineMax。更详细的相关介绍可以到 <a target="_blank" rel="noopener" href="https://greensock.com/docs/#/HTML5/GSAP">GASP</a> 上看。</p>
+<h2 id="关卡编辑"><a href="#关卡编辑" class="headerlink" title="关卡编辑"></a>关卡编辑</h2><p>为了更快捷的编辑关卡，特地在 Creator 中为 Choochoo 定制了一个关卡编辑器，使用的是 <strong>自定义 Gizmo</strong> 技术。<br>实现起来很简单，在关卡编辑器中画出所有可能的点和路线，点击相关的点和路线生成相应的数据，再根据新的数据更新绘图。<br>再配合上 inspector 上的属性编辑，编辑一个关卡就变得非常简单了。</p>
+<figure class="figure"><img src="/2017/01/20/choochoo/choochoo-editor.gif" class="" title="choochoo"></figure>
+<!-- ![choochoo-editor.gif](choochoo-editor.gif) -->
+
+
+	
+
+	
+		<span class="different-posts"><a href="/2017/01/20/choochoo/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'OKu8AlQ5vKYHkq5LoJKpCaag-gzGzoHsz',
+            appKey: '1Jx62NvmJI2Mzsb1BWhjS2xX'
+        })
+    </script>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<!-- <p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p> -->
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2021 2youyou2 | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
